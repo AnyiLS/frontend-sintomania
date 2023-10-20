@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Univers Bold", sans-serif;
+  src: url("../assets/fonts/univers_bold2.ttf");
+}
+
+@font-face {
+  font-family: "Interstate", sans-serif;
+  src: url("../assets/fonts/interstate-regular.woff");
+}
+
+* {
+  font-family: "Univers Bold", sans-serif !important;
+}
+
+body {
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

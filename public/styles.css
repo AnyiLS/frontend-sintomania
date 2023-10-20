@@ -1,0 +1,92 @@
+@keyframes pathzr {
+    75% {
+      stroke-dashoffset: 0;
+      stroke: var(--end);
+    }
+    100% {
+      stroke-dashoffset: 0;
+      stroke: var(--start);
+    }
+  }
+  
+  @keyframes colorzr {
+    to {
+      fill: #fff;
+    }
+  }
+  
+  [class^='chart-'] {
+    --start: rgba(81, 88, 86, 0);
+    --end: rgba(255, 255, 255, 1);
+  
+    fill: var(--start);
+    stroke: var(--end);
+    stroke-width: 8px;
+  
+    animation: pathzr 2000ms cubic-bezier(0.61, 0, 0.39, 1) forwards,
+      colorzr 650ms 1 cubic-bezier(0.61, 0, 0.39, 1) 1000ms forwards;
+    animation-play-state: running;
+    
+  }
+  
+  .chart-z {
+    --start: rgba(255,255,255,1);
+    --end: rgba(93, 190, 102, 1);
+  }
+  
+  #boream:hover [class^='chart-'] {
+    animation-play-state: paused;
+  }
+  
+  .chart-d,
+  .chart-e,
+  .chart-rs,
+  .chart-c,
+  .chart-s
+  {
+    stroke-dashoffset: 150px;
+    stroke-dasharray: 150px;
+  }
+  .chart-a {
+    stroke-dashoffset: 155px;
+    stroke-dasharray: 155px;
+  }
+  .chart-s {
+    stroke-dashoffset: 275px;
+    stroke-dasharray: 275px;
+  }
+  .chart-z {
+    stroke-dashoffset: 320px;
+    stroke-dasharray: 320px;
+  }
+  
+  .chart-d {
+    animation-delay: 50ms, 1100ms;
+  }
+
+  .chart-e {
+    animation-delay: 50ms, 1100ms;
+  }
+  .chart-l {
+    animation-delay: 100ms, 1150ms;
+  }
+  .chart-s {
+    animation-delay: 150ms, 1200ms;
+  }
+  .chart-l {
+    animation-delay: 200ms, 1250ms;
+  }
+  .chart-e {
+    animation-delay: 250ms, 1300ms;
+  }
+  .chart-rs {
+    animation-delay: 300ms, 1350ms;
+  }
+  .chart-c {
+    animation-delay: 350ms, 1400ms;
+  }
+
+#Capa_2 {
+    background-color: rgba(0,0,0, .5);
+    background-image: url('https://juegoseml.co/images-recover/polvora.gif');
+}
