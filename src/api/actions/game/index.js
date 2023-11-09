@@ -6,11 +6,11 @@ const useGameActions = () => {
     /** Services */
     const { useServices } = useApi();
     const { useGameServices } = useServices();
-    const { getLevelsOfUser } = useGameServices();
+    const { getLevelsOfUser, getLevelsByWorld } = useGameServices();
 
     /** Types */
     const { useGameTypes } = useTypes();
-    const { GET_LEVELS } = useGameTypes();
+    const { GET_LEVELS, GET_LEVELS_BY_WORLD } = useGameTypes();
 
     const actGetLevelByUser =
         ({ onError }) =>
@@ -69,11 +69,30 @@ const useGameActions = () => {
         }
     } 
 
+    const actGetLevelsByWorld = ({world, onError}) => async dispatch => {
+        try {
+            const res = await getLevelsByWorld(world);
+            const { data } = res.data;
+
+            dispatch({
+                type: GET_LEVELS_BY_WORLD,
+                payload: data
+            });
+
+            const redux = JSON.parse(localStorage.getItem('persist:root'));
+            redux.levels_world = JSON.stringify({levels: data});
+            localStorage.setItem("persist:root", JSON.stringify(redux));
+        } catch (error) {
+            onError && onError(error);
+        }
+    }
+
     return {
         actGetLevelByUser,
         actSetScore,
         actGetScores,
-        actSetImage
+        actSetImage,
+        actGetLevelsByWorld
     };
 };
 

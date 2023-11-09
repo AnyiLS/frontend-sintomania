@@ -2,7 +2,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 export const World1Container = styled.div`
-    ${tw`relative w-screen h-screen`}
+    ${tw`relative w-screen h-screen overflow-hidden`}
 
     .monster-container {
         ${tw`h-[35%] w-full flex justify-between`}

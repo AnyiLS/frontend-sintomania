@@ -20,6 +20,7 @@ const useInterceptors = () => {
 
     /** Effects */
     useEffect(() => {
+        // axios.defaults.baseURL = "http://localhost:8000/api";
         axios.defaults.baseURL = "https://apisintomania.juegoseml.co/api";
         axios.defaults.headers = {
             "Authorization": token ? `Bearer ${token}` : undefined,

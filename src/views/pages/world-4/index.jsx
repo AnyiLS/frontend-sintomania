@@ -5,8 +5,10 @@ import { World1Container } from "styles/pages/world-4.styles";
 import { Fragment, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useSelectors from "models/selectors";
+import useModels from "models";
+import React from "react";
 
-const World1 = () => {
+const World4 = () => {
     /** Variables */
     const { id } = useParams();
 
@@ -82,7 +84,7 @@ const World1 = () => {
 
         return () => audio.pause();
     }, []);
-    console.log(background);
+
     return (
         <Fragment>
             {
@@ -270,4 +272,4 @@ const World1 = () => {
     );
 };
 
-export default World1;
+export default World4;

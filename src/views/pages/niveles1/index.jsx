@@ -1,140 +1,210 @@
-import { useNavigate } from "react-router-dom";
-import { StyledContainerNiveles1 } from "./niveles1.styles";
-import { useEffect, useState } from "react";
-import HomeStyles from "styles/pages/home.styles";
+import { useNavigate } from 'react-router-dom';
+import {
+    RedirectionIconLevel1,
+    RedirectionIconLevel2,
+    RedirectionIconLevel3,
+    StyledContainerNiveles1,
+} from './niveles1.styles';
+import { useEffect, useState } from 'react';
+import HomeStyles from 'styles/pages/home.styles';
+/** Local Modules */
+import useControllers from 'controllers';
+import useModels from 'models';
+import React from "react";
 
 const Niveles1 = () => {
-  const [levels, setLevels] = useState({
-    level2: true,
-    level3: true,
-    level4: true,
-  });
-  const [sound, setSound] = useState(null);
+    const [sound, setSound] = useState(null);
 
-  useEffect(() => {
-    let levels = localStorage.getItem("levels1");
-    if (!levels) {
-      localStorage.setItem(
-        "levels1",
-        JSON.stringify({ level2: true, level3: true })
-      );
-    } else {
-      setLevels(JSON.parse(levels));
-    }
-    localStorage.setItem("score", 0);
+    useEffect(() => {
+        let levels = localStorage.getItem('levels1');
+        if (!levels) {
+            localStorage.setItem(
+                'levels1',
+                JSON.stringify({ level2: true, level3: true })
+            );
+        }
+        localStorage.setItem('score', 0);
 
-    let gif = localStorage.getItem("gif_level_1");
-    if (!gif) {
-      localStorage.setItem(
-        "gif_level_1",
-        JSON.stringify({ gif: 1 })
-      );
+        let gif = localStorage.getItem('gif_level_1');
+        if (!gif) {
+            localStorage.setItem('gif_level_1', JSON.stringify({ gif: 1 }));
 
-      localStorage.setItem(
-        "gif_level_2",
-        JSON.stringify({ gif: 1 })
-      );
+            localStorage.setItem('gif_level_2', JSON.stringify({ gif: 1 }));
 
-      localStorage.setItem(
-        "gif_level_3",
-        JSON.stringify({ gif: 1 })
-      );
+            localStorage.setItem('gif_level_3', JSON.stringify({ gif: 1 }));
 
-      localStorage.setItem(
-        "gif_level_4",
-        JSON.stringify({ gif: 1 })
-      );
-    }
-  }, []);
+            localStorage.setItem('gif_level_4', JSON.stringify({ gif: 1 }));
+        }
+    }, []);
 
-  //sonidos
-  useEffect(() => {
-    let audio = new Audio("https://juegoseml.co/images-recover/sonidos/sonido-menu.mp3");
-    audio.loop = true;
-    setSound(audio);
-    audio.play();
+    //sonidos
+    useEffect(() => {
+        let audio = new Audio(
+            'https://juegoseml.co/images-recover/sonidos/sonido-menu.mp3'
+        );
+        audio.loop = true;
+        setSound(audio);
+        
+        let isPauseAudio = localStorage.getItem('isPauseAudio');
+        if (isPauseAudio === 'false') {
+            audio.play();
+        }
 
-    return () => audio.pause();
-  }, []);
+        return () => audio.pause();
+    }, []);
 
-  return (
-    <HomeStyles.Background2 style={{ background: `url(https://juegoseml.co/images-recover/background-blue.webp) center center / cover` }}>
-      <div className="stars"></div>
-      <div className="world">
-        <img src="https://juegoseml.co/images-recover/world-earth.webp" alt="world" />
-      </div>
-      <div className="kite">
-        <img src="https://juegoseml.co/images-recover/kite.webp" alt="kite" />
-      </div>
-      <div className="satelite">
-        <img src="https://juegoseml.co/images-recover/satelite.webp" alt="Satelite" />
-      </div>
-      <div className="planet">
-        <img src="https://juegoseml.co/images-recover/planet.webp" alt="Planet" />
-      </div>
-      <div className="bacterium">
-        <img src="https://juegoseml.co/images-recover/bacteria-home.png" alt="Bacterium" />
-      </div>
-      <div className="button" style={{marginTop: 0}}>
-        <StyledContainerNiveles1>
-          <div className="relative mobile:max-w-[320px] mini-tablet:max-w-[380px] tablet:max-w-[500px] w-full">
-            <img
-              src="https://juegoseml.co/images-recover/cuadros-niveles-1.webp"
-              alt=""
-              className="mobile:max-w-[320px] mini-tablet:max-w-[380px] tablet:max-w-[500px]"
-            />
+    /** Controllers */
+    const { useScreenHooks } = useControllers();
+    const { useLevels1 } = useScreenHooks();
+    const { levels } = useLevels1();
 
-            {/* nivel 1 gif */}
-            <a
-              href="/world-1/1"
-              className="absolute w-[33.3%] top-[22.1%] left-[9.2%]"
-            >
-              <img src="https://juegoseml.co/images-recover/monster-4.webp" alt="" />
-            </a>
+    console.log(levels);
 
-            {/* nivel 2 gif */}
-            <a
-              href="/world-1/2"
-              className="absolute w-[33.3%] top-[22.1%] left-[57.4%]"
-            >
-              <img src="https://juegoseml.co/images-recover/monster-2.webp" alt="" />
-              {levels.level2 && (
+    const { useSelectors } = useModels();
+    const { useSelector, useAuthSelectors } = useSelectors();
+    const { loginSelector } = useAuthSelectors();
+    const login = useSelector(loginSelector);
+
+    return (
+        <HomeStyles.Background2
+            style={{
+                background: `url(https://juegoseml.co/images-recover/background-blue.webp) center center / cover`,
+            }}
+        >
+            <div className="stars"></div>
+            <div className="world">
                 <img
-                  src="https://juegoseml.co/images-recover/candado.webp"
-                  alt=""
-                  className="absolute w-[60%] top-[-12%] left-[20%]"
+                    fetchpriority="low"
+                    src="https://juegoseml.co/images-recover/world-earth.webp"
+                    alt="world"
+                    width={414}
+                    height={414}
                 />
-              )}
-            </a>
-
-            {/* nivel 3 gif */}
-            <a
-              href="/world-1/3"
-              className="absolute w-[33.3%] top-[67.1%] left-[34.6%]"
-            >
-              <img src="https://juegoseml.co/images-recover/monster-3.webp" alt="" />
-              {levels.level3 && (
+            </div>
+            <div className="kite">
                 <img
-                  src="https://juegoseml.co/images-recover/candado.webp"
-                  alt=""
-                  className="absolute w-[60%] top-[-12%] left-[20%]"
+                    fetchpriority="low"
+                    src="https://juegoseml.co/images-recover/kite.webp"
+                    alt="kite"
+                    width={165}
+                    height={156}
                 />
-              )}
-            </a>
-          </div>
+            </div>
+            <div className="satelite">
+                <img
+                    fetchpriority="low"
+                    src="https://juegoseml.co/images-recover/satelite.webp"
+                    alt="Satelite"
+                    width={124}
+                    height={75}
+                />
+            </div>
+            <div className="planet">
+                <img
+                    fetchpriority="low"
+                    src="https://juegoseml.co/images-recover/planet.webp"
+                    alt="Planet"
+                    width={207}
+                    height={141}
+                />
+            </div>
+            <div className="bacterium">
+                <img
+                    fetchpriority="low"
+                    src="https://juegoseml.co/images-recover/bacteria-home.png"
+                    alt="Bacterium"
+                    width={124}
+                    height={124}
+                />
+            </div>
+            <div
+                className="button"
+                style={{ marginTop: 0 }}
+            >
+                <StyledContainerNiveles1>
+                    <div className="relative mobile:max-w-[320px] mini-tablet:max-w-[380px] tablet:max-w-[500px] w-full">
+                        <img
+                            fetchpriority="high"
+                            src="https://juegoseml.co/images-recover/cuadros-niveles-1.webp"
+                            alt=""
+                            className="mobile:max-w-[320px] mini-tablet:max-w-[380px] tablet:max-w-[500px]"
+                            width={372}
+                            height={352}
+                        />
 
-          {/* boton casa */}
-          <a href="/worlds">
-            <img
-              src="https://juegoseml.co/images-recover/casa-niveles-1.webp"
-              alt=""
-              className="absolute w-[13%] left-0 top-[3%]"
-            />
-          </a>
-        </StyledContainerNiveles1>
-      </div>
-    </HomeStyles.Background2>
-  );
+                        {/* nivel 1 gif */}
+                        <RedirectionIconLevel1 href="/world-1/1">
+                            <img
+                                fetchpriority="high"
+                                src="https://juegoseml.co/images-recover/monster-4.webp"
+                                alt=""
+                                width={124}
+                                height={79}
+                            />
+                        </RedirectionIconLevel1>
+
+                        {/* nivel 2 gif */}
+                        <RedirectionIconLevel2
+                            href="/world-1/2"
+                            className=""
+                        >
+                            <img
+                                fetchpriority="high"
+                                src="https://juegoseml.co/images-recover/monster-2.webp"
+                                alt=""
+                                width={124}
+                                height={79}
+                            />
+                            {levels.level < 2 && (
+                                <img
+                                    fetchpriority="high"
+                                    src="https://juegoseml.co/images-recover/candado.webp"
+                                    alt=""
+                                    className="absolute w-[60%] top-[-12%] left-[20%]"
+                                    width={74}
+                                    height={88}
+                                />
+                            )}
+                        </RedirectionIconLevel2>
+
+                        {/* nivel 3 gif */}
+                        <RedirectionIconLevel3
+                            href="/world-1/3"
+                            className=""
+                        >
+                            <img
+                                fetchpriority="high"
+                                src="https://juegoseml.co/images-recover/monster-3.webp"
+                                alt=""
+                                width={124}
+                                height={79}
+                            />
+                            {levels.level < 3 && (
+                                <img
+                                    fetchpriority="high"
+                                    src="https://juegoseml.co/images-recover/candado.webp"
+                                    alt=""
+                                    className="absolute w-[60%] top-[-12%] left-[20%]"
+                                    width={74}
+                                    height={88}
+                                />
+                            )}
+                        </RedirectionIconLevel3>
+                    </div>
+
+                    {/* boton casa */}
+                    <a href="/worlds">
+                        <img
+                            fetchpriority="high"
+                            src="https://juegoseml.co/images-recover/casa-niveles-1.webp"
+                            alt=""
+                            className="absolute w-[13%] left-0 top-[3%]"
+                        />
+                    </a>
+                </StyledContainerNiveles1>
+            </div>
+        </HomeStyles.Background2>
+    );
 };
 
 export default Niveles1;

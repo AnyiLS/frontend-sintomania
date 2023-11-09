@@ -1,7 +1,14 @@
 import { RegisterContent } from "styles/pages/register.styles";
 import HomeStyles from "styles/pages/home.styles";
+import useModels from "models";
+import React from "react";
 
 const Instructions = () => {
+  const { useSelectors } = useModels();
+    const { useSelector, useAuthSelectors } = useSelectors();
+    const { loginSelector } = useAuthSelectors();
+    const login = useSelector(loginSelector);
+
   return (
     <HomeStyles.Background>
       <div className="stars"></div>

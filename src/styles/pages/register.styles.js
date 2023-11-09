@@ -2,7 +2,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 export const RegisterContent = styled.div`
-  ${tw`h-screen relative flex flex-col justify-center items-center`}
+  ${tw`h-screen relative flex flex-col justify-center items-center overflow-hidden`}
 
 
   .register-content {

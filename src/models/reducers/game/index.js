@@ -8,7 +8,7 @@ const useGameReducers = () => {
 
     /** Types */
     const { useGameTypes } = useTypes();
-    const { GET_LEVELS } = useGameTypes();
+    const { GET_LEVELS, GET_LEVELS_BY_WORLD } = useGameTypes();
 
     /** Reducers */
     const levels = createReducer(
@@ -30,8 +30,18 @@ const useGameReducers = () => {
         }
     );
 
+    const levels_world = createReducer({ levels: {} }, {
+        [GET_LEVELS_BY_WORLD](state, action) {
+            return {
+                ...state,
+                levels: action.payload
+            }
+        }
+    })
+
     return {
         levels,
+        levels_world
     };
 };
 

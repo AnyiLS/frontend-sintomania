@@ -5,8 +5,10 @@ import { World1Container } from "styles/pages/world-3.styles";
 import { Fragment, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useSelectors from "models/selectors";
+import useModels from "models";
+import React from "react";
 
-const World1 = () => {
+const World3 = () => {
     /** Variables */
     const { id } = useParams();
     /** Controllers */
@@ -79,7 +81,6 @@ const World1 = () => {
         return () => audio.pause();
     }, []);
 
-    console.log(background);
     return (
         <Fragment>
             {modal && (
@@ -286,4 +287,4 @@ const World1 = () => {
     );
 };
 
-export default World1;
+export default World3;

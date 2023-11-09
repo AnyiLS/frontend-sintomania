@@ -5,8 +5,12 @@ import { World1Container } from "styles/pages/world-2.styles";
 import { Fragment, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useSelectors from "models/selectors";
+import useModels from "models";
+import React from "react";
 
-const World1 = () => {
+const World2 = () => {
+    
+
     /** Variables */
     const { id } = useParams();
 
@@ -287,4 +291,4 @@ const World1 = () => {
     );
 };
 
-export default World1;
+export default World2;

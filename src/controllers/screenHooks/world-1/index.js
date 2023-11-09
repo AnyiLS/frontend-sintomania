@@ -112,52 +112,19 @@ const useWorld1 = () => {
     };
 
     const handleScore = (score, id) => {
+        let last_score = JSON.parse(localStorage.getItem('last_score'));
+        last_score = last_score ? parseInt(last_score) + score : score;
+        localStorage.setItem('last_score', last_score);
+
         dispatch(
             actSetScore({
-                data: { score, level: 1 },
+                data: { score, level: 1, world_level: id },
                 onError: (error) => console.error(error),
                 onSuccess: () => handleSuccess(id),
             })
         );
     };
 
-    // useEffect(() => {
-    //     let intervalId;
-
-    //     const handleInterval = () => {
-    //         let score = JSON.parse(localStorage.getItem("score"));
-
-    //         if (score > 0 && !isScore) {
-    //             handleScore(score, id, dispatch);
-    //             setIsScore(true);
-    //             clearInterval(intervalId);
-    //         }
-    //     };
-
-    //     intervalId = setInterval(handleInterval, 500);
-
-    //     setInterval(() => {
-    //         if (window.location.pathname.includes("world-1")) {
-    //             let svg = document.getElementById("desler");
-    //             let newAudio = new Audio("https://juegoseml.co/images-recover/sonidos/desler.mp3");
-
-    //             if (svg.style.display === "none") {
-    //                 newAudio.pause();
-    //             } else {
-    //                 newAudio.play();
-    //             }
-    //         }
-    //     }, 2000);
-
-    //     if (window.location.pathname.includes("/world-1")) {
-    //         handleStartCronometer();
-    //     }
-
-    //     return () => {
-    //         clearInterval(intervalId);
-    //         handlePauseCronometer();
-    //     };
-    // }, []);
     const [coockies] = useCookies(['score']);
     const [isManage, setIsManage] = React.useState(false);
 
@@ -166,14 +133,11 @@ const useWorld1 = () => {
         const date = new Date();
         date.setTime(date.getTime() + 30 * 24 * 60 * 60 * 1000);
 
-        document.cookie =
-            'score' +
-            '=' +
-            0 +
-            ';' +
-            'expires=' +
-            date.toUTCString() +
-            ';path=/';
+        document.cookie = `score=${0};expires=${date.toUTCString()};path=/`;
+
+        if(id === "1") {
+            localStorage.setItem('last_score', 0)
+        }
 
         return () => {
             clearInterval(intervalId);

@@ -3,6 +3,8 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import useViews from "views";
 import { StyledContainerScore } from "./score.styles";
 import { useEffect, useState } from "react";
+import useModels from "models";
+import React from "react";
 
 const Score = () => {
     const router = useNavigate();
@@ -12,9 +14,12 @@ const Score = () => {
     const { useScreenHooks } = useControllers();
     const { useScore } = useScreenHooks();
     const { scores } = useScore(level);
-    let score = JSON.parse(localStorage.getItem("score"))
+    let score = JSON.parse(localStorage.getItem("last_score"))
 
-    console.log("scores", scores);
+    const { useSelectors } = useModels();
+    const { useSelector, useAuthSelectors } = useSelectors();
+    const { loginSelector } = useAuthSelectors();
+    const login = useSelector(loginSelector);
 
     /** Views */
     const { useComponents } = useViews();
@@ -32,7 +37,11 @@ const Score = () => {
         let audio = new Audio('https://juegoseml.co/images-recover/sonidos/sonido-menu.mp3');
         audio.loop = true;
         setSound(audio);
-        audio.play();
+        
+        let isPauseAudio = localStorage.getItem('isPauseAudio');
+        if (isPauseAudio === 'false') {
+            audio.play();
+        }
 
         return () => audio.pause();
     }, []);

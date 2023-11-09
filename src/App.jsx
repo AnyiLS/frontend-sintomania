@@ -24,7 +24,7 @@ const App = () => {
     const { Loading } = useComponents();
 
     return (
-        <React.Suspense fallback={<p>Loading...!</p>}>
+        <React.Suspense fallback={<Loading />}>
             <Provider store={store}>
                 <PersistGate persistor={persistor}>
                     {promiseInProgress && <Loading />}

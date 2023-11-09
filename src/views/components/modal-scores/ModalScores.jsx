@@ -1,9 +1,9 @@
-import useControllers from "controllers";
-import { ScoresModalStyles } from "./ModalScores.styles";
-import { useEffect } from "react";
-import ScoreItem from "../scoreItem/ScoreItem";
+import useControllers from 'controllers';
+import { ScoresModalStyles } from './ModalScores.styles';
+import { useEffect } from 'react';
+import ScoreItem from '../scoreItem/ScoreItem';
 
-const ModalScores = ({onClose}) => {
+const ModalScores = ({ onClose }) => {
     /** Controllers */
     const { useComponentsHooks } = useControllers();
     const { useModalScores } = useComponentsHooks();
@@ -18,12 +18,16 @@ const ModalScores = ({onClose}) => {
         <ScoresModalStyles.Modal>
             <div className="relative flex flex-col justify-center items-center mt-[10%] pl-[1%] pr-[4%]">
                 <div className="relative">
-                    <div className="button-close" onClick={onClose}></div>
+                    <div
+                        className="button-close"
+                        onClick={onClose}
+                    ></div>
                     <img
+                        fetchpriority="high"
                         src="https://juegoseml.co/images-recover/score-menu-principal.webp"
                         className="w-full max-w-[500px]"
                         id="cambio"
-                        style={{marginLeft: "2.4%"}}
+                        style={{ marginLeft: '2.4%' }}
                     />
                     <div className="score-list">
                         {scores.map((item, index) => (

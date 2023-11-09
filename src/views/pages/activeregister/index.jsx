@@ -2,9 +2,16 @@ import useControllers from "controllers";
 import { useNavigate } from "react-router-dom";
 import { StyledContainerActiveRegister } from "./error.styles";
 import HomeStyles from "styles/pages/home.styles";
+import useModels from "models";
+import React from "react";
 
 const ActiveRegister = () => {
   const router = useNavigate();
+
+  const { useSelectors } = useModels();
+    const { useSelector, useAuthSelectors } = useSelectors();
+    const { loginSelector } = useAuthSelectors();
+    const login = useSelector(loginSelector);
 
   return (
     <HomeStyles.Background>

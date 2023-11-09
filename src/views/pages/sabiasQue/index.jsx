@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { StyledContainersabiasQue } from "./sabiasQue.styles";
+import useModels from "models";
+import React from "react";
 
 const SabiasQue = () => {
     const {state} = useLocation();
@@ -8,6 +10,11 @@ const SabiasQue = () => {
 
     const [background, setBackground] = useState("");
     const [fondo, setFondo] = useState("");
+
+    const { useSelectors } = useModels();
+    const { useSelector, useAuthSelectors } = useSelectors();
+    const { loginSelector } = useAuthSelectors();
+    const login = useSelector(loginSelector);
 
     useEffect(() => {
         

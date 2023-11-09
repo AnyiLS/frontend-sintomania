@@ -4,7 +4,7 @@ import HomeStyles from "styles/pages/home.styles";
 const Loading = () => {
   return (
     <div>
-      <HomeStyles.Background>
+      <HomeStyles.Background style={{ position: 'fixed', top: '0', left: '0' }}>
         <div className="stars"></div>
         <svg
           xmlns="http://www.w3.org/2000/svg"

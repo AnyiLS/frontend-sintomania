@@ -1,6 +1,6 @@
-import axios from "axios";
-import { useDispatch } from "react-redux";
-import useGameActions from "api/actions/game";
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import useGameActions from 'api/actions/game';
 
 const ModalPerfil = ({
     name,
@@ -18,7 +18,7 @@ const ModalPerfil = ({
         let file = e.target.files[0];
 
         let formData = new FormData();
-        formData.append("file", file);
+        formData.append('file', file);
 
         dispatch(
             actSetImage({
@@ -29,7 +29,7 @@ const ModalPerfil = ({
         );
     };
 
-    console.log("image", image)
+    console.log('image', image);
 
     return (
         <div className="bg-[#0000007a] absolute w-full bottom-[0%] z-[10000] right-[0%] top-[0%] left-[0%] m-auto flex items-center justify-center">
@@ -41,7 +41,7 @@ const ModalPerfil = ({
             <input
                 type="file"
                 id="file-input"
-                style={{ display: "none" }}
+                style={{ display: 'none' }}
                 onChange={handleChange}
             />
 
@@ -81,7 +81,11 @@ const ModalPerfil = ({
                                 d="m4,2c0,20.99,17.01,38,38,38S80,22.99,80,2c0-.67-.02-1.34-.05-2H4.05c-.03.66-.05,1.33-.05,2Z"
                             />
                             <path d="m4,45c-1.38,0-2.72.19-4,.52v30.95c1.28.33,2.62.52,4,.52,8.84,0,16-7.16,16-16s-7.16-16-16-16Z" />
-                            <circle cx={288.5} cy={45.5} r={25.5} />
+                            <circle
+                                cx={288.5}
+                                cy={45.5}
+                                r={25.5}
+                            />
                             <path
                                 className="cls-35"
                                 d="m155.5,34C179.75,34,200.75,20.18,211.12,0h-111.24c10.36,20.18,31.37,34,55.62,34Z"
@@ -90,10 +94,26 @@ const ModalPerfil = ({
                                 className="cls-35"
                                 d="m155.5,264c-34.52,0-62.5,27.98-62.5,62.5,0,10.27,2.49,19.95,6.88,28.5h111.24c4.39-8.55,6.88-18.23,6.88-28.5,0-34.52-27.98-62.5-62.5-62.5Z"
                             />
-                            <circle cx={62.5} cy={83.5} r={25.5} />
-                            <circle cx={333.5} cy={19.5} r={10.5} />
-                            <circle cx={72.5} cy={306.5} r={10.5} />
-                            <circle cx={54.5} cy={254.5} r={20.5} />
+                            <circle
+                                cx={62.5}
+                                cy={83.5}
+                                r={25.5}
+                            />
+                            <circle
+                                cx={333.5}
+                                cy={19.5}
+                                r={10.5}
+                            />
+                            <circle
+                                cx={72.5}
+                                cy={306.5}
+                                r={10.5}
+                            />
+                            <circle
+                                cx={54.5}
+                                cy={254.5}
+                                r={20.5}
+                            />
                             <circle
                                 className="cls-71"
                                 cx={269.5}
@@ -189,8 +209,14 @@ const ModalPerfil = ({
                         gradientTransform="translate(460.86 -463.5) scale(.76 1.48)"
                         gradientUnits="userSpaceOnUse"
                     >
-                        <stop offset={0} stopColor="#fff" />
-                        <stop offset={1} stopColor="#000" />
+                        <stop
+                            offset={0}
+                            stopColor="#fff"
+                        />
+                        <stop
+                            offset={1}
+                            stopColor="#000"
+                        />
                     </radialGradient>
                     <radialGradient
                         id="radial-gradient-2"
@@ -214,15 +240,31 @@ const ModalPerfil = ({
                         viewBox="0 0 355 355"
                     >
                         <g>
-                            <rect className="cls-1" width={355} height={355} />
+                            <rect
+                                className="cls-1"
+                                width={355}
+                                height={355}
+                            />
                             <path
                                 className="cls-25"
                                 d="m4,2c0,20.99,17.01,38,38,38S80,22.99,80,2c0-.67-.02-1.34-.05-2H4.05c-.03.66-.05,1.33-.05,2Z"
                             />
                             <path d="m4,45c-1.38,0-2.72.19-4,.52v30.95c1.28.33,2.62.52,4,.52,8.84,0,16-7.16,16-16s-7.16-16-16-16Z" />
-                            <circle cx={62.5} cy={83.5} r={25.5} />
-                            <circle cx={72.5} cy={306.5} r={10.5} />
-                            <circle cx={54.5} cy={254.5} r={20.5} />
+                            <circle
+                                cx={62.5}
+                                cy={83.5}
+                                r={25.5}
+                            />
+                            <circle
+                                cx={72.5}
+                                cy={306.5}
+                                r={10.5}
+                            />
+                            <circle
+                                cx={54.5}
+                                cy={254.5}
+                                r={20.5}
+                            />
                             <path
                                 className="cls-75"
                                 d="m0,256.12v48.75c10.42-3.2,18-12.9,18-24.38s-7.58-21.17-18-24.38Z"
@@ -255,8 +297,14 @@ const ModalPerfil = ({
                         gradientTransform="translate(423.02 -497.86) scale(.9 .66)"
                         gradientUnits="userSpaceOnUse"
                     >
-                        <stop offset={0.5} stopColor="#fff" />
-                        <stop offset={0.5} stopColor="#000" />
+                        <stop
+                            offset={0.5}
+                            stopColor="#fff"
+                        />
+                        <stop
+                            offset={0.5}
+                            stopColor="#000"
+                        />
                     </linearGradient>
                     <linearGradient
                         id="linear-gradient-2"
@@ -267,9 +315,18 @@ const ModalPerfil = ({
                         gradientTransform="translate(423.02 -497.86) scale(.9 .66)"
                         gradientUnits="userSpaceOnUse"
                     >
-                        <stop offset={0.47} stopColor="#000" />
-                        <stop offset={0.5} stopColor="#fff" />
-                        <stop offset={0.5} stopColor="#000" />
+                        <stop
+                            offset={0.47}
+                            stopColor="#000"
+                        />
+                        <stop
+                            offset={0.5}
+                            stopColor="#fff"
+                        />
+                        <stop
+                            offset={0.5}
+                            stopColor="#000"
+                        />
                     </linearGradient>
                     <radialGradient
                         id="radial-gradient-3"
@@ -281,11 +338,26 @@ const ModalPerfil = ({
                         gradientTransform="translate(423.02 -212.22) scale(.9 .33)"
                         xlinkHref="#radial-gradient"
                     />
-                    <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
-                        <feOffset dx={2.32} dy={2.32} />
-                        <feGaussianBlur result="blur" stdDeviation={2.32} />
-                        <feFlood floodColor="#063a59" floodOpacity={0.75} />
-                        <feComposite in2="blur" operator="in" />
+                    <filter
+                        id="drop-shadow-1"
+                        filterUnits="userSpaceOnUse"
+                    >
+                        <feOffset
+                            dx={2.32}
+                            dy={2.32}
+                        />
+                        <feGaussianBlur
+                            result="blur"
+                            stdDeviation={2.32}
+                        />
+                        <feFlood
+                            floodColor="#063a59"
+                            floodOpacity={0.75}
+                        />
+                        <feComposite
+                            in2="blur"
+                            operator="in"
+                        />
                         <feComposite in="SourceGraphic" />
                     </filter>
                     <linearGradient
@@ -296,8 +368,14 @@ const ModalPerfil = ({
                         y2={15.2}
                         gradientUnits="userSpaceOnUse"
                     >
-                        <stop offset={0.4} stopColor="#1a1a1a" />
-                        <stop offset={0.58} stopColor="#fff" />
+                        <stop
+                            offset={0.4}
+                            stopColor="#1a1a1a"
+                        />
+                        <stop
+                            offset={0.58}
+                            stopColor="#fff"
+                        />
                     </linearGradient>
                     <linearGradient
                         id="linear-gradient-4"
@@ -308,8 +386,14 @@ const ModalPerfil = ({
                         gradientTransform="translate(632.56 -550.75) rotate(90) scale(1 .75)"
                         gradientUnits="userSpaceOnUse"
                     >
-                        <stop offset={0} stopColor="#000" />
-                        <stop offset={1} stopColor="#fff" />
+                        <stop
+                            offset={0}
+                            stopColor="#000"
+                        />
+                        <stop
+                            offset={1}
+                            stopColor="#fff"
+                        />
                     </linearGradient>
                     <linearGradient
                         id="linear-gradient-5"
@@ -338,8 +422,14 @@ const ModalPerfil = ({
                         gradientTransform="translate(-91.31 255.32) rotate(-33.69) scale(.79 .63) skewX(-.96)"
                         gradientUnits="userSpaceOnUse"
                     >
-                        <stop offset={0.5} stopColor="#000" />
-                        <stop offset={0.5} stopColor="#fff" />
+                        <stop
+                            offset={0.5}
+                            stopColor="#000"
+                        />
+                        <stop
+                            offset={0.5}
+                            stopColor="#fff"
+                        />
                     </radialGradient>
                     <linearGradient
                         id="linear-gradient-7"
@@ -458,17 +548,38 @@ const ModalPerfil = ({
                         gradientTransform="translate(82.29 292.8) rotate(-30.44) scale(.42 .32) skewX(2.66)"
                         xlinkHref="#radial-gradient-4"
                     />
-                    <filter id="drop-shadow-2" filterUnits="userSpaceOnUse">
-                        <feOffset dx={2.32} dy={2.32} />
-                        <feGaussianBlur result="blur-2" stdDeviation={2.32} />
-                        <feFlood floodColor="#063a59" floodOpacity={0.75} />
-                        <feComposite in2="blur-2" operator="in" />
+                    <filter
+                        id="drop-shadow-2"
+                        filterUnits="userSpaceOnUse"
+                    >
+                        <feOffset
+                            dx={2.32}
+                            dy={2.32}
+                        />
+                        <feGaussianBlur
+                            result="blur-2"
+                            stdDeviation={2.32}
+                        />
+                        <feFlood
+                            floodColor="#063a59"
+                            floodOpacity={0.75}
+                        />
+                        <feComposite
+                            in2="blur-2"
+                            operator="in"
+                        />
                         <feComposite in="SourceGraphic" />
                     </filter>
                 </defs>
                 <g className="cls-76">
-                    <g id="Capa_2" data-name="Capa 2">
-                        <g id="Capa_75" data-name="Capa 75">
+                    <g
+                        id="Capa_2"
+                        data-name="Capa 2"
+                    >
+                        <g
+                            id="Capa_75"
+                            data-name="Capa 75"
+                        >
                             <g>
                                 <g className="cls-62">
                                     <path
@@ -634,7 +745,10 @@ const ModalPerfil = ({
                                 </g>
                             </g>
                         </g>
-                        <g id="Capa_74" data-name="Capa 74">
+                        <g
+                            id="Capa_74"
+                            data-name="Capa 74"
+                        >
                             <g>
                                 <g className="cls-61">
                                     <path
@@ -693,13 +807,20 @@ const ModalPerfil = ({
                                 className="cls-41"
                                 transform="translate(238.47 55.99)"
                             >
-                                <tspan x={0} y={0}>
-                                    {"PERFIL"}
+                                <tspan
+                                    x={0}
+                                    y={0}
+                                >
+                                    {'PERFIL'}
                                 </tspan>
                             </text>
                         </g>
-                        <g id="Capa_73" data-name="Capa 73" onClick={onClose}>
-                            <g  data="hola">
+                        <g
+                            id="Capa_73"
+                            data-name="Capa 73"
+                            onClick={onClose}
+                        >
+                            <g data="hola">
                                 <g className="cls-62">
                                     <circle
                                         className="cls-5"
@@ -787,7 +908,6 @@ const ModalPerfil = ({
                                     d="m588.27,63.4c-2.6,0-5.03-1.36-6.36-3.56-1.73-2.86-1.25-6.6,1.15-9.1,1.27-1.33,2.6-2.64,3.88-3.91l.08-.08c-.94-.93-1.87-1.87-2.8-2.8-1.33-1.33-2.65-2.65-3.16-4.67-.8-3.16.6-6.52,3.41-8.17,1.12-.66,2.41-1.01,3.75-1.01.32,0,.65.02.97.06,1.62.21,3.09.95,4.38,2.2,1.32,1.29,2.62,2.6,3.92,3.91l2.87-2.88c1.07-1.08,2.18-2.2,3.74-2.83.85-.32,1.72-.47,2.61-.47,1.97,0,3.89.78,5.26,2.13,1.84,1.81,2.58,4.52,1.93,7.05-.51,2.01-1.82,3.32-3.09,4.59l-2.86,2.87,3.65,3.64c1.62,1.63,2.45,3.35,2.54,5.25.09,2-.66,3.99-2.06,5.46-1.39,1.46-3.32,2.3-5.28,2.3h0c-.13,0-.27,0-.41-.01-1.94-.11-3.67-.95-5.28-2.56l-3.6-3.6-2.81,2.81c-1.32,1.32-2.61,2.61-4.58,3.14-.6.16-1.22.24-1.85.24Z"
                                 />
                                 <path
-                                    
                                     className="cls-40"
                                     d="m610.88,51.1c-.41-.41-.82-.82-1.23-1.23-1.05-1.04-2.09-2.09-3.14-3.13,1.16-1.16,2.31-2.32,3.47-3.47,1.26-1.26,2.48-2.44,2.94-4.23.55-2.15-.08-4.5-1.66-6.07-1.76-1.74-4.45-2.29-6.76-1.44-1.49.6-2.56,1.76-3.67,2.87-1.11,1.11-2.22,2.22-3.33,3.34-1.54-1.55-3.08-3.1-4.64-4.62-1.06-1.03-2.31-1.73-3.79-1.92-1.39-.18-2.85.1-4.06.81-2.39,1.41-3.62,4.34-2.94,7.03.45,1.76,1.65,2.95,2.89,4.19,1.18,1.18,2.36,2.35,3.54,3.53-1.57,1.56-3.15,3.1-4.68,4.7-2.02,2.11-2.56,5.31-1.01,7.86,1.44,2.37,4.38,3.57,7.07,2.86,1.73-.46,2.89-1.65,4.12-2.87,1.18-1.18,2.36-2.36,3.53-3.54.89.89,1.78,1.78,2.68,2.67.55.55,1.1,1.1,1.65,1.65,1.28,1.28,2.77,2.16,4.61,2.27,3.72.21,6.84-2.98,6.67-6.67-.09-1.82-.98-3.31-2.24-4.58Z"
                                 />
@@ -819,20 +939,21 @@ const ModalPerfil = ({
                                         cy={181.18}
                                         rx={64.45}
                                         ry={66.27}
-                                        x={"40%"}
-                                        y={"15.8%"}
-                                        width={"20.1%"}
-                                        height={"18%"}
+                                        x={'40%'}
+                                        y={'15.8%'}
+                                        width={'20.1%'}
+                                        height={'18%'}
                                     >
                                         <label htmlFor="file-input">
                                             <img
                                                 width="100%"
                                                 height="100%"
+                                                fetchpriority="high"
                                                 src={image}
                                                 style={{
-                                                    borderRadius: "50%",
-                                                    width: "100%",
-                                                    height: "100%",
+                                                    borderRadius: '50%',
+                                                    width: '100%',
+                                                    height: '100%',
                                                 }}
                                             />
                                         </label>
@@ -840,28 +961,31 @@ const ModalPerfil = ({
                                 </>
                             ) : (
                                 <foreignObject
-                                        cx={318.56}
-                                        cy={181.18}
-                                        rx={64.45}
-                                        ry={66.27}
-                                        x={"40%"}
-                                        y={"15.8%"}
-                                        width={"20.1%"}
-                                        height={"18%"}
-                                    >
-                                        <label htmlFor="file-input">
-                                            <img
-                                                width="100%"
-                                                height="100%"
-                                                src={"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"}
-                                                style={{
-                                                    borderRadius: "50%",
-                                                    width: "100%",
-                                                    height: "100%",
-                                                }}
-                                            />
-                                        </label>
-                                    </foreignObject>
+                                    cx={318.56}
+                                    cy={181.18}
+                                    rx={64.45}
+                                    ry={66.27}
+                                    x={'40%'}
+                                    y={'15.8%'}
+                                    width={'20.1%'}
+                                    height={'18%'}
+                                >
+                                    <label htmlFor="file-input">
+                                        <img
+                                            fetchpriority="high"
+                                            width="100%"
+                                            height="100%"
+                                            src={
+                                                'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'
+                                            }
+                                            style={{
+                                                borderRadius: '50%',
+                                                width: '100%',
+                                                height: '100%',
+                                            }}
+                                        />
+                                    </label>
+                                </foreignObject>
                             )}
                             {/* <g id="ggBtfa.tif">
                                 <image
@@ -1540,28 +1664,23 @@ const ModalPerfil = ({
                                     className="cls-3"
                                     transform="translate(276.74 290.49)"
                                 >
-                                    <tspan x={0} y={0}>
-                                        {"G"}
+                                    <tspan
+                                        x={0}
+                                        y={0}
+                                    >
+                                        {'GUARDAR'}
                                     </tspan>
-                                    <tspan className="cls-78" x={14.42} y={0}>
-                                        {"U"}
-                                    </tspan>
-                                    <tspan x={28.68} y={0}>
-                                        {"AR"}
-                                    </tspan>
-                                    <tspan className="cls-77" x={58.24} y={0}>
-                                        {"D"}
-                                    </tspan>
-                                    <tspan x={72.02} y={0}>
-                                        {"AR"}
-                                    </tspan>
+                                    
                                 </text>
                             </g>
                             <text
                                 className="cls-2"
                                 transform="translate(200.7 432.51)"
                             >
-                                <tspan x={0} y={0}>
+                                <tspan
+                                    x={0}
+                                    y={0}
+                                >
                                     {email}
                                 </tspan>
                             </text>
@@ -1569,7 +1688,10 @@ const ModalPerfil = ({
                                 className="cls-2"
                                 transform="translate(200.26 494.42)"
                             >
-                                <tspan x={0} y={0}>
+                                <tspan
+                                    x={0}
+                                    y={0}
+                                >
                                     {phone}
                                 </tspan>
                             </text>
@@ -1577,7 +1699,10 @@ const ModalPerfil = ({
                                 className="cls-2"
                                 transform="translate(200.02 552.3)"
                             >
-                                <tspan x={0} y={0}>
+                                <tspan
+                                    x={0}
+                                    y={0}
+                                >
                                     {pharmacy_name}
                                 </tspan>
                             </text>
@@ -1585,7 +1710,10 @@ const ModalPerfil = ({
                                 className="cls-2"
                                 transform="translate(200.26 608.19)"
                             >
-                                <tspan x={0} y={0}>
+                                <tspan
+                                    x={0}
+                                    y={0}
+                                >
                                     {chain}
                                 </tspan>
                             </text>
@@ -1602,7 +1730,10 @@ const ModalPerfil = ({
                                 className="cls-2"
                                 transform="translate(200.23 374.87)"
                             >
-                                <tspan x={0} y={0}>
+                                <tspan
+                                    x={0}
+                                    y={0}
+                                >
                                     {name}
                                 </tspan>
                             </text>

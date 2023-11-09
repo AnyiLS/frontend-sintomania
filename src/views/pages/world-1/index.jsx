@@ -6,8 +6,15 @@ import { World1Container } from "styles/pages/world-1.styles";
 import { Fragment, useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import useSelectors from "models/selectors";
+import useModels from "models";
+import React from "react";
 
 const World1 = () => {
+    const { useSelectors } = useModels();
+    const { useSelector, useAuthSelectors } = useSelectors();
+    const { loginSelector } = useAuthSelectors();
+    const login = useSelector(loginSelector);
+ 
     /** Variables */
     const router = useNavigate();
     const {id} = useParams();
@@ -22,6 +29,7 @@ const World1 = () => {
         isPause,
     } = useWorld1();
 
+    
     const returnParameter = () => {
         if (window.innerWidth > 819) {
             return { width: 650, height: 650 };
@@ -35,10 +43,6 @@ const World1 = () => {
             return { width: 360, height: 360 };
         }
     };
-
-    const { useSelector, useAuthSelectors } = useSelectors();
-    const { loginSelector } = useAuthSelectors();
-    const login = useSelector(loginSelector);
 
     const [background, setBackground] = useState('https://juegoseml.co/images-recover/video-gif.mp4');
     const [modal, setModal] = useState(true);

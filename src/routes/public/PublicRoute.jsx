@@ -1,8 +1,10 @@
 const PublicRoute = ({ component }) => {
-  /** Variables */
-  const Component = component;
+    /** Variables */
+    const Component = component;
 
-  return <Component />;
+    
+
+    return <Component />;
 };
 
 export default PublicRoute;

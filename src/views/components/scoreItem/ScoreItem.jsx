@@ -1788,6 +1788,7 @@ const ScoreItem = ({ name, score, isFirst, image, level }) => {
             <img
                 src={image}
                 alt=""
+                fetchpriority="high"
                 className="absolute w-[11%] top-[14%] left-[3.7%] h-[71%] rounded-[10px]"
             />
             {level === 1 ? (
