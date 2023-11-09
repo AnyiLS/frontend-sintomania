@@ -131,7 +131,7 @@ const Register = () => {
                 <Input
                   control={control}
                   name="invitation"
-                  placeholder="¿Quién te invito?"
+                  placeholder="¿Quién te invitó?"
                   required
                   rules={{
                     required: {
